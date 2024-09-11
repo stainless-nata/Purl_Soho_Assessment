@@ -2,23 +2,22 @@
 
 namespace App\Models;
 
-use App\Domains\Auth\Models\User;
-use App\Models\Product;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
-class Cart extends Model {
+class Cart extends Model
+{
     use HasFactory;
 
-    public function user(): BelongsTo
+    protected $fillable = ['user_id'];
+
+    public function user()
     {
-        return $this->BelongsTo(User::class);
+        return $this->belongsTo(User::class);
     }
 
-    public function carts(): BelongsToMany
+    public function products()
     {
-        return $this->belongsToMany(Product::class)->withPivot('quantity');
+        return $this->belongsToMany(Product::class, 'cart_products')->withPivot('quantity');
     }
 }

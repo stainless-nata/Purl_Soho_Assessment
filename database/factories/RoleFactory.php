@@ -3,7 +3,7 @@
 namespace Database\Factories;
 
 use App\Domains\Auth\Models\Role;
-use App\Domains\Auth\Models\User;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**

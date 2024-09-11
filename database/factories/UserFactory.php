@@ -2,7 +2,7 @@
 
 namespace Database\Factories;
 
-use App\Domains\Auth\Models\User;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 
@@ -26,7 +26,6 @@ class UserFactory extends Factory
     public function definition()
     {
         return [
-            'type' => $this->faker->randomElement([User::TYPE_ADMIN, User::TYPE_USER]),
             'name' => $this->faker->name(),
             'email' => $this->faker->unique()->safeEmail(),
             'email_verified_at' => now(),
@@ -36,31 +35,6 @@ class UserFactory extends Factory
             'active' => true,
         ];
     }
-
-    /**
-     * @return UserFactory
-     */
-    public function admin()
-    {
-        return $this->state(function (array $attributes) {
-            return [
-                'type' => User::TYPE_ADMIN,
-            ];
-        });
-    }
-
-    /**
-     * @return UserFactory
-     */
-    public function user()
-    {
-        return $this->state(function (array $attributes) {
-            return [
-                'type' => User::TYPE_USER,
-            ];
-        });
-    }
-
     /**
      * @return UserFactory
      */

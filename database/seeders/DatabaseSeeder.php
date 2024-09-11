@@ -2,32 +2,22 @@
 
 namespace Database\Seeders;
 
-use Database\Seeders\Traits\TruncateTable;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Seeder;
 
-/**
- * Class DatabaseSeeder.
- */
 class DatabaseSeeder extends Seeder
 {
-    use TruncateTable;
-
     /**
-     * Seed the application's database.
+     * Run the database seeds.
+     *
+     * @return void
      */
     public function run()
     {
-        Model::unguard();
-
-        $this->truncateMultiple([
-            'activity_log',
-            'failed_jobs',
-        ]);
-
-        $this->call(AuthSeeder::class);
-        $this->call(AnnouncementSeeder::class);
-
-        Model::reguard();
+        $seeder = new UserSeeder();
+        $seeder->run();
+        $seeder = new CartSeeder();
+        $seeder->run();
+        $seeder = new ProductSeeder();
+        $seeder->run();
     }
 }

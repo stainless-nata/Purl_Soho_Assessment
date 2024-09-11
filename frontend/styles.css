@@ -1,0 +1,149 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 20px;
+  color: #333;
+}
+
+#login-section {
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+h2 {
+  text-align: center;
+  color: #555;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+input {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px;
+  margin-top: 10px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #218838;
+}
+
+#login-message {
+  color: red;
+  text-align: center;
+  margin-top: 10px;
+}
+
+#logout-btn,
+#view-cart {
+  background-color: #007bff;
+}
+
+#logout-btn:hover,
+#view-cart:hover {
+  background-color: #0056b3;
+}
+
+#logout-btn,
+#view-cart {
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  border: none;
+  color: white;
+  font-size: 16px;
+}
+
+#product-list table,
+#cart-items table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
+  word-wrap: break-word;
+}
+
+th {
+  background-color: #007bff;
+  color: white;
+}
+
+td {
+  background-color: #fff;
+}
+
+tfoot td {
+  font-weight: bold;
+  text-align: right;
+}
+
+tfoot td#cart-total {
+  color: #28a745;
+}
+
+#cart {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+#cart h2 {
+  color: #555;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+
+  #login-section,
+  #product-list,
+  #cart {
+    margin: 10px;
+    padding: 15px;
+  }
+
+  table {
+    font-size: 14px;
+  }
+
+  button {
+    font-size: 14px;
+  }
+}
