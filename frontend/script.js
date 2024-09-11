@@ -1,4 +1,48 @@
 $(document).ready(function () {
+    $('#show-register').click(function () {
+        $('#login-section').hide();
+        $('#register-section').show();
+        $('#show-register').hide();
+        $('#show-login').show();
+    });
+
+    $('#show-login').click(function () {
+        $('#register-section').hide();
+        $('#login-section').show();
+        $('#show-login').hide();
+        $('#show-register').show();
+    });
+
+    // Register form submission
+    $('#register-form').submit(function (event) {
+        event.preventDefault();
+
+        const email = $('#register-email').val();
+        const password = $('#register-password').val();
+        const confirmPassword = $('#confirm-password').val();
+
+        if (password !== confirmPassword) {
+            $('#register-message').text('Passwords do not match.').css('color', 'red');
+            return;
+        }
+
+        $.ajax({
+            url: 'http://127.0.0.1:8000/api/register',
+            method: 'POST',
+            data: {
+                email: email,
+                password: password,
+            },
+            success: function (response) {
+                $('#register-message').text('Registration successful! Please log in.').css('color', 'green');
+                $('#register-form')[0].reset();
+                $('#show-login').click();  // Automatically switch to login form after registration
+            },
+            error: function () {
+                $('#register-message').text('Registration failed. Please try again.').css('color', 'red');
+            }
+        });
+    });
     function showMainPage() {
         $('#login-section').hide();
         $('#product-list').show();

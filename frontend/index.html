@@ -8,6 +8,12 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   </head>
   <body>
+
+    <div style="text-align: center; margin-top: 10px;">
+      <button id="show-register">Register</button>
+      <button id="show-login" style="display: none;">Login</button>
+    </div>
+    
     <div id="login-section">
       <h2>Login</h2>
       <form id="login-form">
@@ -20,6 +26,22 @@
         </div>
       </form>
       <div id="login-message"></div>
+    </div>
+
+    <div id="register-section" style="display: none;">
+      <h2>Register</h2>
+      <form id="register-form">
+        <div style="display: flex; flex-direction: column;">
+          <label for="register-email">Email:</label>
+          <input type="email" id="register-email" name="email" required />
+          <label for="register-password">Password:</label>
+          <input type="password" id="register-password" name="password" required />
+          <label for="confirm-password">Confirm Password:</label>
+          <input type="password" id="confirm-password" name="confirm-password" required />
+          <button type="submit" style="margin-top: 10px">Register</button>
+        </div>
+      </form>
+      <div id="register-message"></div>
     </div>
 
     <div style="display: flex; flex-direction: column; margin-top: 20px">
