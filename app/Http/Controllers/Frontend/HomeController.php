@@ -12,6 +12,7 @@ class HomeController
      */
     public function index()
     {
+        echo '123123123';
         return view('frontend.index');
     }
 }
